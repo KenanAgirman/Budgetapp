@@ -21,7 +21,7 @@ const RecapBudget = () => {
     const year = now.getFullYear();
 
     const fetchExpenses = () => {
-        fetch(`http://localhost:3000/expenses/${user?.id}`)
+        fetch(`http://localhost:8080/expenses/${user?.id}`)
             .then((res) => res.json())
             .then((data) => {
                 setExpenses(data);

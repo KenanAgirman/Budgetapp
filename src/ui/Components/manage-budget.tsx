@@ -46,7 +46,7 @@ const ManageBudget = ({onAddExpense}:ManageBudgetProps)=>{
         console.log("Données envoyées :", data);
 
         try {
-            const response = await fetch('http://localhost:3000/form', {
+            const response = await fetch('http://localhost:8080/form', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),

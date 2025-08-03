@@ -13,7 +13,7 @@ const MyBudget = ({refresh}:MyBudgetProps)=>{
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:3000/expenses/amount/${user?.id}`)
+        fetch(`http://localhost:8080/expenses/amount/${user?.id}`)
             .then((res) => res.json())
             .then((data) => {
                 setTotal(Number(data[0]?.totalAmount ?? 0));
