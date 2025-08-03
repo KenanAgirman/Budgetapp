@@ -1,17 +1,17 @@
 import {AppBar, Avatar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography} from "@mui/material";
-import {useContext, useState} from "react";
-import {AuthContext} from "../../context/auth-context.tsx";
+import {useState} from "react";
+import {useAuth} from "../../context/auth-context.tsx";
 import {useNavigate} from "react-router-dom";
 
 const Header = () => {
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-    const { user, logout } = useContext(AuthContext);
+    const { user, logout } = useAuth();
     const navigate = useNavigate();
     const capitalize = (str: string) =>
         str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
     const userName = user?.name || 'Invité';
-    console.log('ID SUSER CONNECTE ',user.id);
+    console.log('ID SUSER CONNECTE ',user?.id);
 
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElUser(event.currentTarget);

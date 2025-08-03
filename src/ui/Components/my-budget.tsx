@@ -1,6 +1,6 @@
 import {CardContent, Divider, Typography} from "@mui/material";
-import {useContext, useEffect, useState} from "react";
-import {AuthContext} from "../../context/auth-context.tsx";
+import {useEffect, useState} from "react";
+import {useAuth} from "../../context/auth-context.tsx";
 
 type MyBudgetProps = {
     refresh: number;
@@ -10,10 +10,10 @@ const MyBudget = ({refresh}:MyBudgetProps)=>{
     const monthName = now.toLocaleString('fr-FR', { month: 'long' });
     const year = now.toLocaleString('fr-FR', { year: 'numeric' });
     const [total, setTotal] = useState<number>(0);
-    const { user } = useContext(AuthContext);
+    const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:3000/expenses/amount/${user.id}`)
+        fetch(`http://localhost:3000/expenses/amount/${user?.id}`)
             .then((res) => res.json())
             .then((data) => {
                 setTotal(Number(data[0]?.totalAmount ?? 0));

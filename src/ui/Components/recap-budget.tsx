@@ -4,24 +4,24 @@ import {
     Tooltip,
     Legend, Chart
 } from 'chart.js';
-import {useContext, useEffect, useState} from "react";
-import {Doughnut, Line} from "react-chartjs-2";
+import { useEffect, useState} from "react";
+import {Doughnut} from "react-chartjs-2";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import {AuthContext} from "../../context/auth-context.tsx";
+import {useAuth} from "../../context/auth-context.tsx";
 
 Chart.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 const RecapBudget = () => {
     const [open, setOpen] = useState(false);
     const [expenses, setExpenses] = useState<{ category: string; total: number }[]>([]);
-    const { user } = useContext(AuthContext);
+    const { user } = useAuth();
 
     const now = new Date();
     const monthName = now.toLocaleString('fr-FR', { month: 'long' });
     const year = now.getFullYear();
 
     const fetchExpenses = () => {
-        fetch(`http://localhost:3000/expenses/${user.id}`)
+        fetch(`http://localhost:3000/expenses/${user?.id}`)
             .then((res) => res.json())
             .then((data) => {
                 setExpenses(data);
@@ -60,7 +60,7 @@ const RecapBudget = () => {
         }],
     };
 
-    const options = {
+    const options : any= {
         plugins: {
             datalabels: {
                 color: '#fff',
@@ -98,7 +98,7 @@ const RecapBudget = () => {
             <Dialog open={open} onClose={handleCloseDialog} maxWidth="sm" fullWidth>
                 <DialogTitle>Graphique de mes dépenses <strong>{monthName} {year}</strong></DialogTitle>
                 <DialogContent>
-                    <Doughnut data={data} options={options} />
+                    <Doughnut data={data} options={options}/>
                 </DialogContent>
                 <Typography>Voir plus</Typography>
             </Dialog>

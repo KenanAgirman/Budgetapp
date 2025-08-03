@@ -1,5 +1,5 @@
 import {Box, Button, TextField, Typography} from "@mui/material";
-import {useContext, useState} from "react";
+import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import type {Errors} from "../../../data/api-interfaces.ts";
 import AuthSwitcher from "./auth-switcher.tsx";
@@ -17,7 +17,6 @@ const RegisterView = ()=>{
 
 
     const [errors, setErrors] = useState<Errors>({});
-    const [success,setSuccess] = useState<string[]>([]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

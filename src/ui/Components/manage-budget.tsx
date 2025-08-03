@@ -10,8 +10,8 @@ import {
     MenuItem,
     Stack, Alert
 } from "@mui/material";
-import {useContext, useState} from "react";
-import {AuthContext} from "../../context/auth-context.tsx";
+import {useState} from "react";
+import {useAuth} from "../../context/auth-context.tsx";
 import React from "react";
 import {useNavigate} from "react-router-dom";
 
@@ -34,7 +34,7 @@ const ManageBudget = ({onAddExpense}:ManageBudgetProps)=>{
     const [closeAlert, setCloseAlert] = useState(false);
 
     const navigate = useNavigate();
-    const { user } = useContext(AuthContext);
+    const { user} = useAuth();
 
     const handleOpenDialog = () => setOpen(true);
     const handleCloseDialog = () => setOpen(false);

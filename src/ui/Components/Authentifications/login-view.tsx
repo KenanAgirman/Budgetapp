@@ -1,10 +1,9 @@
-import {useContext, useState} from "react";
+import {useState} from "react";
 import {Box, Button, TextField, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import type {Errors} from "../../../data/api-interfaces.ts";
 import AuthSwitcher from "./auth-switcher.tsx";
-import React from "react";
-import {AuthContext} from "../../../context/auth-context.tsx";
+import {useAuth} from "../../../context/auth-context.tsx";
 
 const LoginView = ()=>{
     const [name,setName] = useState<string>("");
@@ -13,11 +12,10 @@ const LoginView = ()=>{
     const navigate = useNavigate();
 
     const [errors, setErrors] = useState<Errors>({});
-    const [success,setSuccess] = useState<string[]>([]);
-    const { login } = useContext(AuthContext);
+    const { login } = useAuth();
 
 
-    const handleSubmit = async (e)=>{
+    const handleSubmit = async (e:any)=>{
             e.preventDefault();
 
             const data = {name,password};
