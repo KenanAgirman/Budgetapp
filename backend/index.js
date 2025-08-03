@@ -134,6 +134,11 @@ app.get('/expenses/amount/:userId',(req,res)=>{
         res.json(result);
     })
 })
+console.log('MySQL config:', {
+    host: process.env.MYSQL_HOST,
+    port: process.env.MYSQL_PORT,
+    user: process.env.MYSQL_USER
+});
 
 const PORT = process.env.PORT || 3000;
 
