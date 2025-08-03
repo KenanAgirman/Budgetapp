@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
@@ -14,7 +16,13 @@ const db = mysql.createPool({
     password: 'Password01+',
     database: 'budget_app_db',
 });
-
+const connection = mysql.createConnection({
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    port: process.env.MYSQL_PORT
+});
 db.getConnection((err, connection) => {
     if (err) {
         console.error('Erreur de connexion à la base de données :', err);
