@@ -134,6 +134,9 @@ app.get('/expenses/amount/:userId',(req,res)=>{
         res.json(result);
     })
 })
-app.listen(process.env.MYSQL_PORT, () => {
-    console.log(`Serveur démarré sur http://localhost:${process.env.MYSQL_PORT}`);
+
+const PORT = process.env.PORT || 3306;
+
+app.listen(PORT, () => {
+    console.log(`Serveur démarré sur http://localhost:${PORT}`);
 });
