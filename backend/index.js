@@ -10,13 +10,8 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+
 const db = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'Password01+',
-    database: 'budget_app_db',
-});
-const connection = mysql.createConnection({
     host: process.env.MYSQL_HOST,
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
