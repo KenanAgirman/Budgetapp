@@ -5,7 +5,6 @@ const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -135,6 +134,6 @@ app.get('/expenses/amount/:userId',(req,res)=>{
         res.json(result);
     })
 })
-app.listen(PORT, () => {
-    console.log(`Serveur démarré sur http://localhost:${PORT}`);
+app.listen(process.env.MYSQL_PORT, () => {
+    console.log(`Serveur démarré sur http://localhost:${process.env.MYSQL_PORT}`);
 });
