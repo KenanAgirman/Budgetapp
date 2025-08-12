@@ -8,14 +8,12 @@ Une application web full-stack permettant de gérer ses finances personnelles en
 
 ### Frontend
 - **React** avec **TypeScript**
-- Design responsive (utilisation possible de Tailwind, MUI ou autre)
-- Appels API via `fetch` ou `axios`
-
-### Backend
+- libraire UI Material UI.
+- Appels API via `fetch`
+-
+- ### Backend
 - **Express.js** (Node.js)
 - **MySQL** comme base de données relationnelle
-- Sécurité des connexions via gestion de sessions ou JWT (au choix)
-
 ---
 
 ## ⚙️ Fonctionnalités principales
@@ -24,8 +22,8 @@ Une application web full-stack permettant de gérer ses finances personnelles en
 - 📊 Tableau de bord des dépenses et revenus
 - ➕ Ajout / édition / suppression de transactions
 - 📈 Visualisation du solde en temps réel
-- 🔎 Filtrage par date, catégorie ou type
-- 🗂️ Catégories personnalisées<img width="1919" height="914" alt="Capture d'écran 2025-08-03 212109" src="https://github.com/user-attachments/assets/b3a3e5ba-d998-4b11-8c43-611311f0eaa6" />
+- 🗂️ Catégories personnalisées
+- <img width="1919" height="914" alt="Capture d'écran 2025-08-03 212109" src="https://github.com/user-attachments/assets/b3a3e5ba-d998-4b11-8c43-611311f0eaa6" />
 <img width="1912" height="891" alt="Capture d'écran 2025-08-03 211629" src="https://github.com/user-attachments/assets/37b3f707-9cc1-4d8c-85ad-064ae247e5d4" />
 <img width="1916" height="917" alt="Capture d'écran 2025-08-03 211644" src="https://github.com/user-attachments/assets/ea378f37-242c-4a20-9bc2-262def916f0e" />
 <img width="1233" height="878" alt="Capture d'écran 2025-08-03 211639" src="https://github.com/user-attachments/assets/f46e684d-4c01-4001-a160-78d4e20d23cb" />
