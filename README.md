@@ -10,7 +10,7 @@ Une application web full-stack permettant de gérer ses finances personnelles en
 - **React** avec **TypeScript**
 - libraire UI Material UI.
 - Appels API via `fetch`
--
+  
 - ### Backend
 - **Express.js** (Node.js)
 - **MySQL** comme base de données relationnelle
